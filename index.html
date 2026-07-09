@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrimax-Store | Suplementos e Nutrição</title>
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
 
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">
+        <span>NUTRIMAX</span><small>STORE</small>
+      </div>
+      <nav class="nav">
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="cart-toggle" data-testid="cart-toggle">
+        🛒 Carrinho
+        <span class="cart-count" data-testid="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <h1 class="hero__title">Sua dose diária,<br /><em>sem enrolação.</em></h1>
+        <p class="hero__subtitle">
+          Suplementos selecionados para treino, recuperação e rotina —
+          direto ao ponto, como um rótulo bem lido.
+        </p>
+      </div>
+      <div class="hero__facts">
+        <p class="hero__facts-title">Informações da Loja</p>
+        <div class="hero__fact"><span>Produtos ativos</span><strong>10</strong></div>
+        <div class="hero__fact"><span>Categorias</span><strong>4</strong></div>
+        <div class="hero__fact"><span>Frete grátis acima de</span><strong>R$ 150</strong></div>
+        <div class="hero__fact"><span>Entrega média</span><strong>3-5 dias</strong></div>
+      </div>
+    </section>
+
+    <section id="produtos" class="container">
+      <div class="filters">
+        <div class="filters__categories" data-testid="category-filters">
+          <button class="category-pill is-active" data-testid="category-filter" data-category="todos">Todos</button>
+          <button class="category-pill" data-testid="category-filter" data-category="proteinas">Proteínas</button>
+          <button class="category-pill" data-testid="category-filter" data-category="vitaminas">Vitaminas</button>
+          <button class="category-pill" data-testid="category-filter" data-category="barrinhas">Barrinhas</button>
+          <button class="category-pill" data-testid="category-filter" data-category="pre-treino">Pré-treino</button>
+        </div>
+
+        <select class="sort-select" data-testid="sort-select">
+          <option value="relevance">Relevância</option>
+          <option value="price-asc">Menor preço</option>
+          <option value="price-desc">Maior preço</option>
+          <option value="name-asc">Nome (A-Z)</option>
+        </select>
+      </div>
+
+      <div class="product-grid" data-testid="product-grid">
+        <!-- Produtos renderizados via JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Nutrimax-Store — Projeto de portfólio (Front-end + QA). Não é uma loja real.
+    </div>
+  </footer>
+
+  <!-- Carrinho -->
+  <div class="overlay" data-testid="overlay"></div>
+  <aside class="cart-drawer" data-testid="cart-drawer">
+    <div class="cart-drawer__header">
+      <h2>Seu carrinho</h2>
+      <button class="cart-drawer__close" data-testid="cart-close">&times;</button>
+    </div>
+    <ul class="cart-list" data-testid="cart-list">
+      <!-- Itens renderizados via JS -->
+    </ul>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__total">
+        <span>Total</span>
+        <span data-testid="cart-total">R$ 0,00</span>
+      </div>
+      <button class="checkout-btn" data-testid="checkout-btn">Finalizar compra</button>
+    </div>
+  </aside>
+
+  <script src="assets/js/data/products.js"></script>
+  <script src="assets/js/modules/cart.js"></script>
+  <script src="assets/js/modules/filters.js"></script>
+  <script src="assets/js/modules/render.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+/* ==========================================================================
+   Nutrimax-Store — Design System
+   Assinatura visual: cards de produto inspirados em rótulos de
+   informação nutricional (Supplement Facts).
+   ========================================================================== */
+
+:root {
+  /* Cor */
+  --color-bg: #F4F6F1;
+  --color-surface: #FFFFFF;
+  --color-ink: #1E2A1F;
+  --color-primary: #2F5233;
+  --color-primary-dark: #1C3620;
+  --color-accent: #D9A441;
+  --color-accent-soft: #F0D9A0;
+  --color-sale: #C1440E;
+  --color-line: #1E2A1F;
+  --color-muted: #6B7568;
+
+  /* Tipografia */
+  --font-display: "Space Grotesk", "Arial Black", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  /* Layout */
+  --radius: 4px;
+  --max-width: 1200px;
+  --gap: 24px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-bg);
+  border-bottom: 3px solid var(--color-ink);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+.logo small {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--color-primary);
+}
+
+.cart-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  border: 2px solid var(--color-ink);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.cart-toggle:hover {
+  background: var(--color-accent-soft);
+}
+
+.cart-count {
+  background: var(--color-sale);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 64px 0 48px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: var(--gap);
+  align-items: end;
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.02;
+}
+
+.hero__title em {
+  font-style: normal;
+  color: var(--color-primary);
+}
+
+.hero__subtitle {
+  margin-top: 16px;
+  max-width: 40ch;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.hero__facts {
+  border: 3px solid var(--color-ink);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+
+.hero__facts-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  border-bottom: 8px solid var(--color-ink);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.hero__fact {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.hero__fact:last-child {
+  border-bottom: none;
+}
+
+.hero__fact strong {
+  color: var(--color-primary);
+}
+
+/* ---------- Filtros ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-ink);
+  margin-bottom: 40px;
+}
+
+.filters__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-pill {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.category-pill.is-active,
+.category-pill:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.sort-select {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  background: var(--color-surface);
+}
+
+/* ---------- Grid de produtos ---------- */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--gap);
+  padding-bottom: 64px;
+}
+
+.product-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.product-card__label {
+  border-top: 8px solid var(--color-ink);
+  padding: 16px;
+}
+
+.product-card__category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+.product-card__name {
+  font-size: 1.1rem;
+  margin: 4px 0 12px;
+  min-height: 2.6em;
+}
+
+.product-card__rule {
+  height: 4px;
+  background: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.product-card__facts dt {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+}
+
+.product-card__fact {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--color-muted);
+}
+
+.product-card__fact--price dd {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.product-card__add {
+  margin-top: auto;
+  border-top: 2px solid var(--color-ink);
+  padding: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  transition: background 0.15s ease;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 0;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+}
+
+/* ---------- Carrinho (drawer) ---------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 42, 31, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 30;
+}
+
+.overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(400px, 90vw);
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-ink);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer.is-open {
+  transform: translateX(0);
+}
+
+.cart-drawer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 3px solid var(--color-ink);
+}
+
+.cart-drawer__close {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.cart-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 20px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--color-muted);
+}
+
+.cart-item__price {
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.cart-item__qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+}
+
+.qty-btn {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+
+.cart-item__remove {
+  grid-column: 2;
+  font-size: 0.75rem;
+  color: var(--color-sale);
+  justify-self: end;
+  text-decoration: underline;
+}
+
+.cart-drawer__footer {
+  border-top: 3px solid var(--color-ink);
+  padding: 20px;
+}
+
+.cart-drawer__total {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  border-radius: var(--radius);
+}
+
+.checkout-btn:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  border-top: 3px solid var(--color-ink);
+  padding: 32px 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+/* ---------- Acessibilidade: foco visível ---------- */
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
