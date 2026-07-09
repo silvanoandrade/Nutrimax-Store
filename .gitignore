@@ -1,1 +1,15 @@
+# macOS
 
+.DS_Store
+
+# PyCharm / IntelliJ
+
+.idea/
+
+# Python
+
+.venv/
+
+# Logs
+
+*.log
