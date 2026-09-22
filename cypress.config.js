@@ -2,10 +2,9 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    // O site é HTML/CSS/JS puro, sem servidor próprio.
-    // O script "start" (http-server) sobe ele em localhost:8080
-    // antes de rodarmos os testes.
-    baseUrl: "http://localhost:8080",
+    // Igual fizemos no BuskMate: os testes apontam por padrão pro site
+    // publicado no GitHub Pages, não pra uma cópia local.
+    baseUrl: "https://silvanoandrade.github.io/Nutrimax-Store",
     setupNodeEvents(on, config) {
       // aqui é onde plugamos "event listeners" do Node no futuro, se precisarmos
     },
