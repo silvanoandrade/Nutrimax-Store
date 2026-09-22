@@ -1,0 +1,30 @@
+{
+  "name": "nutrimax-store",
+  "version": "1.0.0",
+  "description": "Fictional e-commerce project for QA and front-end practice, with automated tests in Cypress.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "http-server . -p 8080 -s",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvanoandrade/Nutrimax-Store.git"
+  },
+  "keywords": [],
+  "author": "Silvano Andrade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silvanoandrade/Nutrimax-Store/issues"
+  },
+  "homepage": "https://github.com/silvanoandrade/Nutrimax-Store#readme",
+  "devDependencies": {
+    "cypress": "^16.1.0",
+    "http-server": "^14.1.1"
+  }
+}

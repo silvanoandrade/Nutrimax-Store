@@ -13,3 +13,9 @@
 # Logs
 
 *.log
+
+# Node / Cypress
+node_modules/
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
