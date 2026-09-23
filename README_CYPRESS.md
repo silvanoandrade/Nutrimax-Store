@@ -55,7 +55,7 @@ Nutrimax-Store/
 ### Fase 0 — Setup ✅
 - [x] Clonar o projeto, instalar dependências
 - [x] Configurar `cypress.config.js` com `baseUrl`
-- [ ] Você roda `npx cypress open` pela primeira vez no seu VS Code (isso baixa o app do Cypress)
+- [x] Rodar `npx cypress open` e publicar o site no GitHub Pages
 
 ### Fase 1 — Fundamentos
 - O que é um "spec" de teste
@@ -63,13 +63,15 @@ Nutrimax-Store/
 - Seletores: por que usamos `data-testid` em vez de classes CSS
 - Primeiro teste "smoke": abrir a página e verificar que ela carregou
 
-### Fase 2 — Catálogo e filtros (TC-01 a TC-06)
-- Verificar que os 10 produtos aparecem
-- Testar filtro por categoria
-- Testar ordenação por preço
-- Combinar filtro + ordenação
+### Fase 2 — Catálogo e filtros (TC-01 a TC-06) ✅
+- [x] TC-01 exibe todos os produtos
+- [x] TC-02 filtra por categoria
+- [x] TC-03 volta pra "Todos"
+- [x] TC-04 ordena por menor preço
+- [x] TC-05 ordena por maior preço
+- [x] TC-06 combina filtro + ordenação
 
-### Fase 3 — Carrinho (TC-07 a TC-13)
+### Fase 3 — Carrinho (TC-07 a TC-13) 🔄 em andamento
 - Adicionar produto, contador do carrinho
 - Incrementar/decrementar quantidade
 - Remover item, mensagem de carrinho vazio
