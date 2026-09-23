@@ -86,6 +86,13 @@ Nutrimax-Store/
 - Fixtures (dados de teste separados do código)
 - Organização estilo Page Object (opcional, para comparar com o que você fez no Selenium)
 
+### Fase 6 — CI (Integração Contínua)
+- O que é CI/CD, na prática (não só na teoria)
+- Criar um workflow do GitHub Actions (`.github/workflows/cypress-tests.yml`)
+- Rodar a suíte inteira automaticamente a cada `git push`
+- Badge de status no README (igual o do BuskMate)
+- Espelha a Aula 7 do Selenium Buskmate, agora em Cypress
+
 ---
 
 ## Como vamos trabalhar
