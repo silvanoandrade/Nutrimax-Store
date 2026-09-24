@@ -38,4 +38,18 @@ describe('Carrinho de compras', () => {
   // passo 4: verificar que o total também atualizou (o produto custa R$ 149,90, então com 2 deve mostrar R$ 299,80):
   cy.get('[data-testid="cart-total"]').should('contain', '299,80')
 })
+  it('TC-10 — diminui a quantidade pelo botão -', () => {
+  // passo 0
+  cy.visit('/')
+  // passo 1: adicionar um produto (pra ter algo no carrinho com qty 1):
+  cy.get('[data-testid="add-to-cart-btn"]').first().click()
+  // passo 2: clicar no botão "+" do item no carrinho (pra aumentar a quantidade pra 2):
+  cy.get('[data-testid="qty-increase"]').click()
+  // passo 3: clicar no botão "-" do item no carrinho (pra diminuir a quantidade pra 1):
+  cy.get('[data-testid="qty-decrease"]').click()
+  // passo 4: verificar que a quantidade diminuiu para "1"
+  cy.get('[data-testid="qty-value"]').should('contain', '1')
+  // passo 5: verificar que o total também atualizou (o produto custa R$ 149,90, então com 1 deve mostrar R$ 149,90):
+  cy.get('[data-testid="cart-total"]').should('contain', '149,90')
+})
 })
