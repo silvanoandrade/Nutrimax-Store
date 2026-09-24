@@ -8,6 +8,15 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/silvanoandrade/Nutrimax-Store/actions/workflows/cypress-tests.yml">
+    <img src="https://github.com/silvanoandrade/Nutrimax-Store/actions/workflows/cypress-tests.yml/badge.svg" />
+  </a>
+  <a href="https://silvanoandrade.github.io/Nutrimax-Store/">
+    <img src="https://img.shields.io/badge/demo-live-2F5233?style=flat-square" />
+  </a>
+</p>
+
+<p align="center">
   A fictional e-commerce project, built from scratch, to practice <strong>Front-end development</strong>
   and serve as the foundation for a full <strong>Quality Assurance strategy</strong> — from test planning
   to automation.
