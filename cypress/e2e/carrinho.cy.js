@@ -76,5 +76,13 @@ describe('Carrinho de compras', () => {
   cy.get('[data-testid="cart-total"]').should('contain', '0,00')
   
 })
+  it('TC-13 — exibe mensagem de carrinho vazio', () => {
+  // passo 0
+  cy.visit('/')
+  // passo 1: verificar que a mensagem de carrinho vazio é exibida
+  cy.get('[data-testid="cart-toggle"]').click()
+  // passo 2: verificar que a mensagem de carrinho vazio é exibida
+  cy.get('[data-testid="cart-empty"]').should('be.visible').and('contain', 'vazio')
+})
 })
   
