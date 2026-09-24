@@ -62,6 +62,19 @@ describe('Carrinho de compras', () => {
   // passo 3: verificar que o item sumiu da lista do carrinho
   cy.get('[data-testid="cart-item"]').should('not.exist')
 
-  })
+})
+  it('TC-12 — remove um item manualmente', () => {
+  // passo 0
+  cy.visit('/')
+  // passo 1: adicionar um produto (pra ter algo no carrinho com qty 1):
+  cy.get('[data-testid="add-to-cart-btn"]').first().click()
+  // passo 2: clicar no botão "Remover" do item no carrinho
+  cy.get('[data-testid="remove-item-btn"]').click()
+  // passo 3: verificar que o item sumiu da lista do carrinho
+  cy.get('[data-testid="cart-item"]').should('not.exist')
+  // passo 4: verificar que o contador voltou a mostrar "0"
+  cy.get('[data-testid="cart-total"]').should('contain', '0,00')
+  
+})
 })
   
