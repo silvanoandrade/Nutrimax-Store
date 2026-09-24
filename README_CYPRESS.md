@@ -71,15 +71,19 @@ Nutrimax-Store/
 - [x] TC-05 ordena por maior preço
 - [x] TC-06 combina filtro + ordenação
 
-### Fase 3 — Carrinho (TC-07 a TC-13) 🔄 em andamento
-- Adicionar produto, contador do carrinho
-- Incrementar/decrementar quantidade
-- Remover item, mensagem de carrinho vazio
-- Aqui entra `.should()` com asserções mais ricas (texto, contagem, estado)
+### Fase 3 — Carrinho (TC-07 a TC-13) ✅
+- [x] TC-07 adiciona produto ao carrinho
+- [x] TC-08 adiciona o mesmo produto duas vezes
+- [x] TC-09 aumenta quantidade (+)
+- [x] TC-10 diminui quantidade (-)
+- [x] TC-11 diminui até zero remove o item
+- [x] TC-12 remove item manualmente
+- [x] TC-13 mensagem de carrinho vazio
 
-### Fase 4 — Persistência (TC-14)
-- Testar `localStorage` com Cypress
-- `cy.reload()`
+### Fase 4 — Persistência (TC-14) ✅
+- [x] TC-14 carrinho sobrevive ao reload (localStorage)
+
+**🎉 Todos os 14 casos de teste automatizados!**
 
 ### Fase 5 — Boas práticas
 - Custom commands (`cypress/support/commands.js`)

@@ -85,4 +85,3 @@ describe('Carrinho de compras', () => {
   cy.get('[data-testid="cart-empty"]').should('be.visible').and('contain', 'vazio')
 })
 })
-  
