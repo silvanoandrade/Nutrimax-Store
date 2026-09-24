@@ -26,4 +26,16 @@ describe('Carrinho de compras', () => {
   cy.get('[data-testid="qty-value"]').should('contain', '2')
 
 })
+  it('TC-09 — aumenta a quantidade pelo botão +', () => {
+  // passo 0
+  cy.visit('/')
+  // passo 1: adicionar um produto (pra ter algo no carrinho com qty 1):
+  cy.get('[data-testid="add-to-cart-btn"]').first().click()
+  // passo 2: clicar no botão "+" do item no carrinho
+  cy.get('[data-testid="qty-increase"]').click()
+  // passo 3: verificar que a quantidade aumentou para "2"
+  cy.get('[data-testid="qty-value"]').should('contain', '2')
+  // passo 4: verificar que o total também atualizou (o produto custa R$ 149,90, então com 2 deve mostrar R$ 299,80):
+  cy.get('[data-testid="cart-total"]').should('contain', '299,80')
+})
 })
